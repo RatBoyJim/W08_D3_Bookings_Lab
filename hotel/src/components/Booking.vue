@@ -40,6 +40,7 @@ export default {
 	width: 30%;
 	background: rgba(255, 255, 255, 0.7);
 	margin-bottom: 20px;
+    margin-right: 5px;
 	padding: 25px;
     border: solid 5px purple;
     border-radius: 10px;
@@ -48,7 +49,7 @@ export default {
 
 button {
 	color: #fff;
-	border: none;
+	border: 1px solid rgb(54, 116, 54);
 	font-size: 18px;
 	padding: 10px;
 	margin-top: 10px;
@@ -56,7 +57,24 @@ button {
 	background: rgb(54, 116, 54);
 }
 
-.delete-button{
+button:hover {
+	color: rgb(54, 116, 54);
+	border: 1px solid rgb(54, 116, 54);
+	font-size: 18px;
+	padding: 10px;
+	margin-top: 10px;
+    margin-right: 10px;
+	background: white;
+}
+
+.delete-button {
+    border: 1px solid red;
     background: red;
+}
+
+.delete-button:hover {
+    background: white;
+    color: red;
+    border: 1px solid red;
 }
 </style>

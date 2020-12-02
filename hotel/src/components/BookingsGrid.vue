@@ -45,10 +45,10 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style>
 #bookingsGrid {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-evenly;
-  flex-flow: row;
+  flex-flow: row wrap;
 }
+</style>
