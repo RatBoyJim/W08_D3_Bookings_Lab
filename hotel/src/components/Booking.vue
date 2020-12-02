@@ -5,7 +5,8 @@
         <h3 v-if="booking.isCheckedIn">Checked In</h3>
         <h3 v-if="!booking.isCheckedIn">Not Checked In</h3>
         <button type="button" v-if="!booking.isCheckedIn" v-on:click="checkIn">Check In</button>
-        <button type="button" v-on:click="deleteBooking">Delete Booking</button>
+        <button type="button" class="delete-button" v-if="!booking.isCheckedIn" v-on:click="deleteBooking">Delete Booking</button>
+        <button type="button" v-if="booking.isCheckedIn" v-on:click="checkOut">Check Out</button>
         
     </div>
 </template>
@@ -26,11 +27,36 @@ export default {
         },
         checkIn(){
             eventBus.$emit('checked-in', this.booking)
+        },
+        checkOut(){
+            eventBus.$emit('checked-out', this.booking)
         }
     }
 }
 </script>
 
 <style>
+.booking {
+	width: 30%;
+	background: rgba(255, 255, 255, 0.7);
+	margin-bottom: 20px;
+	padding: 25px;
+    border: solid 5px purple;
+    border-radius: 10px;
+    max-width: 300px;
+}
 
+button {
+	color: #fff;
+	border: none;
+	font-size: 18px;
+	padding: 10px;
+	margin-top: 10px;
+    margin-right: 10px;
+	background: rgb(54, 116, 54);
+}
+
+.delete-button{
+    background: red;
+}
 </style>

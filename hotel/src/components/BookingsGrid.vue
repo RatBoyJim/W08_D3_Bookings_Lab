@@ -34,6 +34,11 @@ export default {
         let index = this.bookings.indexOf(booking);
         this.bookings[index].isCheckedIn = true;
         BookingService.updateBooking(booking)
+    });
+    eventBus.$on('checked-out', (booking) => {
+        let index = this.bookings.indexOf(booking);
+        this.bookings[index].isCheckedIn = false;
+        BookingSevrice.updateBooking(booking);
     })
   },
 	
@@ -45,5 +50,5 @@ export default {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
-
-
+  flex-flow: row;
+}
